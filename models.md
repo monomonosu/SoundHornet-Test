@@ -6,9 +6,9 @@
 | musicName  | 音楽名            | string   |                            | 
 | artist     | アーティスト      | string   | フリーor多対１？後日検討     | 
 | album      | アルバム          | string   | フリーor多対１？後日検討     | 
-| genre      | ジャンル          | stirng   | フリーor多対１？後日検討     | 
+| genre      | ジャンル          | string   | フリーor多対１？後日検討     | 
 | evaluation | 評価              | integer  |                            | 
-| comment    | コメント          | stirng   |                            | 
+| comment    | コメント          | string   |                            | 
 | time       | 長さ              | string   | 参考程度なので暫定的にTEXT | 
 | bitRate    | ビットレート      | string   |                            | 
 | fileType   | ファイル形式      | string   | mp3,wav等                  | 
