@@ -17,3 +17,25 @@
 | url        | ダウンロード元URL | string   | youtubeからのDL用          | 
 | createdAt  | 作成日時          | datetime |                            | 
 | updatedAt  | 更新日時          | datetime |                            | 
+
+<br>
+
+## Artists
+
+| 項目       | 和名           | タイプ  | 備考 | 
+| ---------- | -------------- | ------- | ---- | 
+| id         | id             | integer |      | 
+| artistName | アーティスト名 | string   |      | 
+| createdAt  | 作成日時       | datetime |      | 
+| updatedAt  | 更新日時       | datetime |      | 
+
+<br>
+
+## Genres
+
+| 項目       | 和名           | タイプ  | 備考 | 
+| ---------- | -------------- | ------- | ---- | 
+| id         | id             | integer |      | 
+| genreName  | ジャンル名     | string   |      | 
+| createdAt  | 作成日時       | datetime |      | 
+| updatedAt  | 更新日時       | datetime |      | 
