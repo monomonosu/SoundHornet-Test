@@ -1,4 +1,5 @@
-from main import db, app, migrate
+from xml.etree.ElementInclude import include
+from main import db, app, migrate, ma
 from datetime import datetime
 
 
@@ -27,7 +28,7 @@ class Music(db.Model):
 
 class Music_Photo(db.Model):
     __tablename__ = 'music_photos'
-    
+
     id = db.Column(db.Integer, primary_key=True)
     musicId = db.Column(db.Integer, db.ForeignKey('musics.id'))
     fileName = db.Column(db.String)
@@ -37,7 +38,7 @@ class Music_Photo(db.Model):
     createdAt = db.Column(db.String, nullable=False, default=datetime.now)
     updatedAt = db.Column(db.String, nullable=False,
                           default=datetime.now, onupdate=datetime.now)
-    
+
 
 class Artist(db.Model):
     __tablename__ = 'artists'
@@ -57,3 +58,26 @@ class Genre(db.Model):
     createdAt = db.Column(db.String, nullable=False, default=datetime.now)
     updatedAt = db.Column(db.String, nullable=False,
                           default=datetime.now, onupdate=datetime.now)
+
+
+class Music_PhotoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Music_Photo
+        include_fk = True
+
+
+class MusicSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Music
+        include_fk = True
+    music_photos = ma.Nested(Music_PhotoSchema, many=True)
+
+
+class ArtistSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Artist
+
+
+class GenreSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Genre
