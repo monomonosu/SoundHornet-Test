@@ -29,6 +29,22 @@ def seeder():
     for music in musics:
         print(music.musicName)
 
+    # -----Music_Photo-----
+    print('---Music_Photo---')
+    musicPhotos = [
+        Music_Photo(musicId=1, fileName='field.jpg', fileType='jpg', fileSize='432KB',
+                    path='static/photos/field.jpg',),
+        Music_Photo(musicId=2, fileName='erigeron.jpg', fileType='jpg', fileSize='445KB',
+                    path='static/photos/erigeron.jpg',),
+        Music_Photo(musicId=3, fileName='forest.jpg', fileType='jpg', fileSize='3.17MB',
+                    path='static/photos/forest.jpg',),
+    ]
+    db.session.add_all(musicPhotos)
+    db.session.commit()
+    musicPhotos = Music_Photo.query.all()
+    for photo in musicPhotos:
+        print(photo.fileName)
+
     # -----Artists-----
     print('---Artists---')
     artists = [

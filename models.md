@@ -20,6 +20,19 @@
 
 <br>
 
+## Music_Photos
+
+| 項目      | 和名           | タイプ   | 備考 | 
+| --------- | -------------- | -------- | ---- | 
+| id        | id             | integer  |      | 
+| music_id  | 音楽_id        | integer  | FK   | 
+| fileName  | ファイル名     | string   |      | 
+| fileType  | ファイル形式   | string   |      | 
+| fileSize  | ファイルサイズ | string   |      | 
+| path      | ファイルPATH   | string   |      | 
+| createdAt | 作成日時       | datetime |      | 
+| updatedAt | 更新日時       | datetime |      | 
+
 ## Artists
 
 | 項目       | 和名           | タイプ  | 備考 | 
