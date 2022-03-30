@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
+from models import *
 
 app = Flask(__name__)
 
@@ -16,6 +17,12 @@ ma = Marshmallow(app)
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
+
+
+@app.route("/test", methods=['GET'])
+def getTest():
+    musics = Music.query.all()
+    return jsonify(MusicSchema(many=True).dump(musics))
 
 
 if __name__ == '__main__':
