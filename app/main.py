@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
 from models import *
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../front/dist/static', template_folder='../front/dist')
 
 # config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/database.db'
@@ -14,9 +14,10 @@ migrate = Migrate(app, db, render_as_batch=True)
 ma = Marshmallow(app)
 
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
+    return render_template('index.html')
 
 
 @app.route("/test-page")
