@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
@@ -17,6 +17,11 @@ ma = Marshmallow(app)
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
+
+
+@app.route("/test-page")
+def testPage():
+    return render_template('test.html')
 
 
 @app.route("/test", methods=['GET'])
