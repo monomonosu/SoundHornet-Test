@@ -20,9 +20,10 @@ def index(path):
     return render_template('index.html')
 
 
-@app.route("/test-page")
-def testPage():
-    return render_template('test.html')
+@app.route('/hoge-page', defaults={'path': ''})
+@app.route('/<path:path>')
+def hogePage(path):
+    return render_template('hoge.html')
 
 
 @app.route("/test", methods=['GET'])
