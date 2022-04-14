@@ -1,1 +1,2 @@
-migration
+migrations
+database/database.db
