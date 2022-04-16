@@ -1,5 +1,11 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
 COPY /app /app
+COPY /front /front
+
+RUN apt update
+RUN apt install -y nodejs npm
+RUN npm install
+RUN npm build
 
 RUN pip install sqlalchemy
 RUN pip install flask-sqlalchemy

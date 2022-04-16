@@ -1,2 +1,2 @@
-migrations
-database/database.db
+app/migrations
+app/database/database.db
