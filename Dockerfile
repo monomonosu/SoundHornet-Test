@@ -6,6 +6,7 @@ WORKDIR ../front
 RUN apt update
 RUN apt install -y nodejs
 RUN apt install -y npm
+RUN apt install -y vim
 RUN npm install -g n
 RUN n 16.14.2
 RUN apt purge -y nodejs npm
