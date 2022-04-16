@@ -1,5 +1,4 @@
 from statistics import mode
-# from main import db, app
 from models import *
 
 

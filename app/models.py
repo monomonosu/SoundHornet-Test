@@ -1,5 +1,5 @@
 from xml.etree.ElementInclude import include
-from main import db, app, migrate, ma
+from app import db, app, migrate, ma
 from datetime import datetime
 
 
