@@ -5,6 +5,7 @@
 
 module.exports = {
   assetsDir: 'static',
+  publicPath: '/front/dist/',
   pages: {
     index: {
       entry: 'src/main.js', // 必須パラメータ
